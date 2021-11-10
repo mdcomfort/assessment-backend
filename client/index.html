@@ -7,20 +7,20 @@
     <button id="complimentButton">Get a compliment</button>
     <button id="fortuneButton">Get a fortune</button>
 
-    <form>
+    <form id="quoteForm">
       <input 
-          type='text'
+          type="text"
           id="quote"
           placeholder="Inspiring quote"/>
       <input 
-          type='text'
+          type="text"
           id="author"
           placeholder="Author"/>
       <input 
-          type='text'
+          type="text"
           id="thoughts"
           placeholder="What does it make you think about?"/>
-      <button id="quoteButton">Add quote</button>
+      <button type="submit" id="quoteButton">Add quote</button>
     </form>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -32,7 +32,7 @@
               const data = response.data;
               alert(data);
             });
-      }
+          }
     </script>
     
     <script src="index.js"></script>
