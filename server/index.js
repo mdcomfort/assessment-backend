@@ -41,7 +41,7 @@ app.post("/api/quote/", (req, res) => {
 
   quotes.push(newPost)
   console.log(req.body)
-  res.status(200).send()
+  res.status(200).send(quotes)
 })
 
 app.listen(4000, () => console.log("Server running on 4000"));
