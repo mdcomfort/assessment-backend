@@ -8,6 +8,7 @@ app.use(cors());
 app.use(express.json()); // When we want to be able to accept JSON.
 
 const quotes = []
+const supportList = []
 
 app.get("/api/compliment/", (req, res) => {
   const compliments = ["Gee, you're a smart cookie!",
@@ -51,4 +52,12 @@ app.post("/api/quote/", (req, res) => {
   res.status(200).send(quotes)
 })
 
+app.post("/api/support/", (req, res) => {
+  let {supportPerson} = req.body
+  supportList.push(supportPerson)
+  console.log(supportList)
+  res.status(200).send(supportList)
+})
+
 app.listen(4000, () => console.log("Server running on 4000"));
+

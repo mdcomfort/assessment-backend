@@ -19,11 +19,23 @@
           placeholder="Author"/>
       <button type="submit" id="quoteButton">Add quote</button>
     </form>
-    <div id="quoteContainer">
-    </div>
+    <form id="supportForm">
+      <input id="supportList"
+      placeholder="Who is there for support?"/>
+      <button type="submit" id="supportButton">Add to list</button>
+    </form>
+
+      <div id="quoteContainer">
+        <h1>Inspiring Quotes:</h1>
+      </div>
+      <div id="listContainer">
+        <h1>Support Team:</h1>
+      </div>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script>
+      // I left the example here but added the index.js file for my code.
       document.getElementById("complimentButton").onclick = function () {
         axios.get("http://localhost:4000/api/compliment/")
             .then(function (response) {

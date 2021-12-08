@@ -37,3 +37,23 @@ document.getElementById("quoteForm").addEventListener('submit', function (event)
       document.getElementById("quoteContainer").append(author)
   })
 })
+
+document.getElementById("supportForm").addEventListener('submit', function (event) {
+  event.preventDefault()
+
+  let supportInput = document.querySelector("#supportList")
+
+  let support = {
+    supportPerson: supportInput.value
+  }
+
+  axios.post("http://localhost:4000/api/support/", support)
+    .then(function (response) {
+      const data = response.data
+      let newList = document.createElement('ul')
+      let newListItem = document.createElement('li')
+      newList.appendChild(newListItem)
+      newListItem.textContent = data[data.length - 1]
+      document.querySelector('#listContainer').appendChild(newListItem)
+  })
+})
