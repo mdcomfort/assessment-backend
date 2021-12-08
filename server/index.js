@@ -32,15 +32,22 @@ app.get("/api/fortune/", (req, res) => {
   res.status(200).send(randomFortune)
 })
 
+app.get("/api/break/", (req, res) => {
+  const breakIdeas = ["Take a walk at a local park.", "Take a walk in your neighborhood.", "Call a friend.", "Call a family member.", "Look up a new recipe.", "Order food from your favorite restaurant.", "Go for a jog.", "Listen to music.", "Bake some brownies.", "Take a nap.", "Watch an episode of your favorite show.", "Choose a cause and make a small donation.", "Take a 10 minute break and then get back at it."]
+
+  let randomIndex = Math.floor(Math.random() * breakIdeas.length)
+  let randomBreak = breakIdeas[randomIndex]
+
+  res.status(200).send(randomBreak)
+})
+
 app.post("/api/quote/", (req, res) => {
   const newPost = {
     quote: req.body.quote,
-    author: req.body.author,
-    thoughts: req.body.thoughts
+    author: req.body.author
   }
 
   quotes.push(newPost)
-  console.log(req.body)
   res.status(200).send(quotes)
 })
 

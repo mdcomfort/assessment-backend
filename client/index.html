@@ -6,23 +6,21 @@
   <body class="container">
     <button id="complimentButton">Get a compliment</button>
     <button id="fortuneButton">Get a fortune</button>
+    <button id="ideasButton">Get an idea</button>
 
     <form id="quoteForm">
-      <input 
+      <input style="width: 500px;" 
           type="text"
           id="quote"
           placeholder="Inspiring quote"/>
-      <input 
+      <input style="width: 200px;" 
           type="text"
           id="author"
           placeholder="Author"/>
-      <input 
-          type="text"
-          id="thoughts"
-          placeholder="What does it make you think about?"/>
       <button type="submit" id="quoteButton">Add quote</button>
     </form>
-
+    <div id="quoteContainer">
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script>
@@ -33,6 +31,7 @@
               alert(data);
             });
           }
+
     </script>
     
     <script src="index.js"></script>
